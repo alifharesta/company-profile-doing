@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
+import ShinyText from './components/ShinyText.jsx'
+import Prism from './components/Prism.jsx'
 import { 
   Globe, 
   Smartphone, 
@@ -174,17 +176,35 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" className="relative overflow-hidden py-20 lg:py-32 hero-gradient">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-transparent"></div>
+      <section id="hero" className="relative overflow-hidden py-20 lg:py-32">
+        {/* Prism Background */}
+        <div className="absolute inset-0 opacity-70">
+          <Prism
+            animationType="rotate"
+            timeScale={0.8}
+            height={4.0}
+            baseWidth={6.0}
+            scale={2.5}
+            hueShift={0.3}
+            colorFrequency={2}
+            noise={0.1}
+            glow={2.0}
+            transparent={true}
+            bloom={1.5}
+          />
+        </div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-50/40 to-white/60"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-in fade-in-0 slide-in-from-bottom-4 duration-1000">
-            <h1 className="hero-text text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-              Innovative IT Solutions for Your{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent animate-gradient">
-                Business Growth
-              </span>
+            <h1 className="hero-text text-4xl md:text-6xl lg:text-7xl font-bold text-gray-500 mb-6">
+              <ShinyText 
+                text="Innovative IT Solutions for Your Business Growth" 
+                disabled={false} 
+                speed={20} 
+              />
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-200">
+            <p className="text-xl md:text-2xl text-gray-600 mt-10 mb-8 max-w-4xl mx-auto leading-relaxed animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-200">
               Doing-doing helps businesses and organizations transform ideas into real digital solutions. 
               From Web & Mobile Apps, AI & Machine Learning, Data Analytics, IoT, to Scientific Research — all in one place.
             </p>
@@ -314,7 +334,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-white text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">

@@ -1,0 +1,32 @@
+.shiny-text {
+  color: #6b7280 ; /* Pure black text for maximum contrast */
+  background: linear-gradient(
+    110deg,
+    #000000 0%,
+    #000000 35%,
+    #ffffff 45%,
+    #ffffff 55%,
+    #000000 65%,
+    #000000 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: shine 3s linear infinite;
+  font-weight: 700;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: -300% 0;
+  }
+}
+
+.shiny-text.disabled {
+  animation: none;
+}

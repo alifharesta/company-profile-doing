@@ -1,0 +1,26 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}
+
+/* Enhanced cursor animation */
+.text-type__cursor {
+  animation: cursor-blink 1s infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
